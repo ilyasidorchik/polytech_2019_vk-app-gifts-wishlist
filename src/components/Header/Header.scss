@@ -4,10 +4,14 @@ $thumbnail-size: 46;
 
 .Header {
 	display: flex;
-    justify-content: space-between;
+	justify-content: space-between;
 
 	&-Preview {
 		display: flex;
+
+		&_user {
+			margin-right: 30px;
+		}
 
 		&_friends {
 			flex-direction: row-reverse;
@@ -19,11 +23,11 @@ $thumbnail-size: 46;
 		height: #{$thumbnail-size}px;
 
 		border-radius: 50%;
-        box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.15);
-        
-        @include media-breakpoint-down(xs) {
-            display: none;
-        }
+		box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.15);
+
+		@include media-breakpoint-down(xs) {
+			display: none;
+		}
 
 		&_user {
 			margin-right: 15px;
@@ -51,10 +55,10 @@ $thumbnail-size: 46;
 	&-ThumbnailStack {
 		display: none;
 		width: #{$thumbnail-size * 2}px;
-        margin-left: 15px;
-        
-        @include media-breakpoint-up(sm) {
-            display: flex;
-        }
+		margin-left: 15px;
+
+		@include media-breakpoint-up(sm) {
+			display: flex;
+		}
 	}
 }
