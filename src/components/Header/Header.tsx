@@ -12,6 +12,7 @@ const Header: React.FC = () => (
 				src={UserThumbnail}
 				alt="Константин Константинопольский"
 			/>
+
 			<p>Константин Константинопольский</p>
 		</div>
 		<div className="Header-Preview Header-Preview_friends">
