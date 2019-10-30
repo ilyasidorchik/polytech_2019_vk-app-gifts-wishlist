@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
+import Header from '../../components/Header';
 import Search from '../Search';
 import MyPage from '../MyPage';
 import FriendPage from '../FriendPage';
@@ -11,6 +12,7 @@ const App: React.FC = () => {
 	return (
 		<div className="App">
 			<BrowserRouter>
+				<Header />
 				<Switch>
 					<Route path="/" component={Search} exact />
 					<Route path="/my-page" component={MyPage} />

@@ -1,0 +1,50 @@
+$thumbnail-size: 46;
+
+.Header {
+	display: flex;
+	justify-content: space-between;
+
+	&-Preview {
+		display: flex;
+
+		&_friends {
+			flex-direction: row-reverse;
+		}
+	}
+
+	&-Thumbnail {
+		width: #{$thumbnail-size}px;
+		height: #{$thumbnail-size}px;
+
+		border-radius: 50%;
+		box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.15);
+
+		&_user {
+			margin-right: 15px;
+		}
+
+		&_friend {
+			position: relative;
+
+			&_1 {
+				z-index: 3;
+			}
+
+			&_2 {
+				right: #{$thumbnail-size / 2}px;
+				z-index: 2;
+			}
+
+			&_3 {
+				right: #{$thumbnail-size}px;
+				z-index: 1;
+			}
+		}
+	}
+
+	&-ThumbnailStack {
+		display: flex;
+		width: #{$thumbnail-size * 2}px;
+		margin-left: 15px;
+	}
+}
