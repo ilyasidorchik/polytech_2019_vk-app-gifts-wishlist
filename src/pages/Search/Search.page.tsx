@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState, ChangeEvent } from 'react';
 
 import Title from '../../components/Title';
-
-import './Search.scss';
 import Input from '../../components/Input';
 
+import './Search.scss';
+
 const Search: React.FC = () => {
+	const [value, setValue] = useState<string>('');
+
+	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+		const { value } = e.target;
+		setValue(value);
+	};
+
 	return (
 		<div className="Search">
 			<Title className="Search-Title">
@@ -22,6 +29,8 @@ const Search: React.FC = () => {
 					className="Input_level_main"
 					name="search"
 					placeholder="Введите название товара"
+					value={value}
+					onChange={handleInputChange}
 				/>
 			</form>
 		</div>
