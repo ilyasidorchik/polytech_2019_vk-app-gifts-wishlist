@@ -1,0 +1,18 @@
+.Link {
+	text-decoration: none;
+	color: #329eff;
+
+	&:hover {
+		color: #2a85d7;
+	}
+
+	&:active {
+		color: #2168a8;
+	}
+
+	&_selected {
+		color: #000 !important;
+
+		cursor: default;
+	}
+}

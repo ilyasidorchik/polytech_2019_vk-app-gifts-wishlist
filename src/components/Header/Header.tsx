@@ -1,5 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
+import '../Link/Link.scss';
 import './Header.scss';
 
 import UserThumbnail from './assets/UserThumbnail.jpg';
@@ -12,8 +14,15 @@ const Header: React.FC = () => (
 				src={UserThumbnail}
 				alt="Константин Константинопольский"
 			/>
-
-			<p>Константин Константинопольский</p>
+			<p>
+				<NavLink
+					to="/profile"
+					className="Link"
+					activeClassName="Link_selected"
+				>
+					Константин Константинопольский
+				</NavLink>
+			</p>
 		</div>
 		<div className="Header-Preview Header-Preview_friends">
 			<div className="Header-ThumbnailStack">
@@ -33,7 +42,15 @@ const Header: React.FC = () => (
 					alt="Константин Константинопольский"
 				/>
 			</div>
-			<p>Мои друзья</p>
+			<p>
+				<NavLink
+					to="/profile"
+					className="Link"
+					activeClassName="Link_selected"
+				>
+					Мои друзья
+				</NavLink>
+			</p>
 		</div>
 	</div>
 );
