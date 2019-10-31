@@ -28,7 +28,7 @@ const Search: React.FC = () => {
 				<Input
 					className="Input_level_main"
 					name="search"
-					placeholder="Введите название товара"
+					placeholder="Название товара"
 					value={value}
 					onChange={handleInputChange}
 					autoFocus={true}
