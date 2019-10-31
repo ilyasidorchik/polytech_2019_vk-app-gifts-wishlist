@@ -10,6 +10,7 @@ interface InputProps extends HTMLAttributes<HTMLElement> {
 	placeholder?: string;
 	value: string;
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+	autoFocus?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -18,7 +19,8 @@ const Input: React.FC<InputProps> = ({
 	type,
 	placeholder,
 	value,
-	onChange
+	onChange,
+	autoFocus
 }) => {
 	return (
 		<input
@@ -29,6 +31,7 @@ const Input: React.FC<InputProps> = ({
 			aria-label={placeholder}
 			value={value}
 			onChange={onChange}
+			autoFocus={autoFocus}
 			autoComplete="off"
 			autoCorrect="off"
 			autoCapitalize="off"

@@ -31,6 +31,7 @@ const Search: React.FC = () => {
 					placeholder="Введите название товара"
 					value={value}
 					onChange={handleInputChange}
+					autoFocus={true}
 				/>
 			</form>
 		</div>
