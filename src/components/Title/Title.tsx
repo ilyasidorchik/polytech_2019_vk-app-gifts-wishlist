@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+import cx from 'classnames';
 
 import './Title.scss';
 
-const Title: React.FC = ({ children }) => (
-	<div className="Title">{children}</div>
+interface TitleProps {
+	className: string;
+	children: ReactNode;
+}
+
+const Title: React.FC<TitleProps> = ({ className, children }) => (
+	<div className={cx('Title', className)}>{children}</div>
 );
 
 export default Title;
