@@ -8,23 +8,24 @@ import UserThumbnail from './assets/UserThumbnail.jpg';
 
 const Header: React.FC = () => (
 	<div className="Header">
-		<div className="Header-Preview Header-Preview_user">
+		<NavLink
+			to="/profile"
+			className="Link Header-Preview Header-Preview_user"
+			activeClassName="Link_selected"
+		>
 			<img
 				className="Header-Thumbnail Header-Thumbnail_user"
 				src={UserThumbnail}
 				alt="Константин Константинопольский"
 			/>
-			<p>
-				<NavLink
-					to="/profile"
-					className="Link"
-					activeClassName="Link_selected"
-				>
-					Константин Константинопольский
-				</NavLink>
-			</p>
-		</div>
-		<div className="Header-Preview Header-Preview_friends">
+			<p>Константин Константинопольский</p>
+		</NavLink>
+
+		<NavLink
+			to="/profile"
+			className="Link Header-Preview Header-Preview_friends"
+			activeClassName="Link_selected"
+		>
 			<div className="Header-ThumbnailStack">
 				<img
 					className="Header-Thumbnail Header-Thumbnail_friend Header-Thumbnail_friend_1"
@@ -42,16 +43,8 @@ const Header: React.FC = () => (
 					alt="Константин Константинопольский"
 				/>
 			</div>
-			<p>
-				<NavLink
-					to="/profile"
-					className="Link"
-					activeClassName="Link_selected"
-				>
-					Мои друзья
-				</NavLink>
-			</p>
-		</div>
+			<p>Мои друзья</p>
+		</NavLink>
 	</div>
 );
 
