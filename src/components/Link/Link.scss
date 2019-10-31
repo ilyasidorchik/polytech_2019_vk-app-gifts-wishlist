@@ -2,12 +2,20 @@
 	text-decoration: none;
 	color: #329eff;
 
+	transition-property: border-color, color, fill;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-out;
+
 	&:hover {
 		color: #2a85d7;
+
+		transition: none;
 	}
 
 	&:active {
 		color: #2168a8;
+
+		transition: none;
 	}
 
 	&_selected {
