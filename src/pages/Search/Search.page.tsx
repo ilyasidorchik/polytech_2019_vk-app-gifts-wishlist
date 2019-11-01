@@ -15,7 +15,7 @@ const Search: React.FC = () => {
 
 	return (
 		<div className="Search">
-			<Title className="Search-Title">
+			<Title className="Title_level_1 Search-Title">
 				Вишлист&nbsp;
 				<span
 					role="img"
@@ -24,9 +24,9 @@ const Search: React.FC = () => {
 					😍
 				</span>
 			</Title>
+
 			<form className="Search-Form">
 				<Input
-					className="Input_level_main"
 					name="search"
 					placeholder="Название товара"
 					value={value}
@@ -34,6 +34,18 @@ const Search: React.FC = () => {
 					autoFocus={true}
 				/>
 			</form>
+
+			<div className="Search-Selection">
+				<Title className="Title_level_2 Search-Title">
+					Популярное&nbsp;
+					<span
+						role="img"
+						aria-label="Эмодзи «Ухмыляющееся лицо с глазами звёздами»"
+					>
+						🤩
+					</span>
+				</Title>
+			</div>
 		</div>
 	);
 };
