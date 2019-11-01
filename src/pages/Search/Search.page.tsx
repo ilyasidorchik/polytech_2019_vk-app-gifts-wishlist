@@ -15,7 +15,7 @@ const Search: React.FC = () => {
 
 	return (
 		<div className="Search">
-			<Title className="Title_level_1 Search-Title">
+			<Title className="Search-Title" level="1">
 				Вишлист&nbsp;
 				<span
 					role="img"
@@ -36,7 +36,7 @@ const Search: React.FC = () => {
 			</form>
 
 			<div className="Search-Selection">
-				<Title className="Title_level_2 Search-Title">
+				<Title className="Search-Title" level="2">
 					Популярное&nbsp;
 					<span
 						role="img"
