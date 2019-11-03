@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, useCallback, ChangeEvent } from 'react';
 
 import Title from '../../components/Title';
 import Input from '../../components/Input';
@@ -8,10 +8,13 @@ import './Search.scss';
 const Search: React.FC = () => {
 	const [value, setValue] = useState<string>('');
 
-	const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-		const { value } = e.target;
-		setValue(value);
-	};
+	const handleInputChange = useCallback(
+		(e: ChangeEvent<HTMLInputElement>) => {
+			const { value } = e.target;
+			setValue(value);
+		},
+		[]
+	);
 
 	return (
 		<div className="Search">
