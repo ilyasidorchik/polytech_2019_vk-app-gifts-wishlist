@@ -48,6 +48,12 @@ const Search: React.FC = () => {
 						🤩
 					</span>
 				</Title>
+
+				<div className="Search-SelectionList">
+					<div className="Search-Item"></div>
+					<div className="Search-Item"></div>
+					<div className="Search-Item"></div>
+				</div>
 			</div>
 		</div>
 	);
