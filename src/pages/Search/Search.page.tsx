@@ -38,7 +38,7 @@ const Search: React.FC = () => {
 				/>
 			</form>
 
-			<div className="Search-Selection">
+			{!value && <div className="Search-Selection">
 				<Title className="Search-Title" level="2">
 					Популярное&nbsp;
 					<span
@@ -54,7 +54,7 @@ const Search: React.FC = () => {
 					<div className="Search-Item"></div>
 					<div className="Search-Item"></div>
 				</div>
-			</div>
+			</div>}
 		</div>
 	);
 };
