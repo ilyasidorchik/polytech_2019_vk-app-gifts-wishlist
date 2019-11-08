@@ -38,23 +38,29 @@ const Search: React.FC = () => {
 				/>
 			</form>
 
-			{!value && <div className="Search-Selection">
-				<Title className="Search-Title" level="2">
-					Популярное&nbsp;
-					<span
-						role="img"
-						aria-label="Эмодзи «Ухмыляющееся лицо с глазами звёздами»"
-					>
-						🤩
-					</span>
-				</Title>
+			{!value && (
+				<div className="Search-Selection">
+					<Title className="Search-Title" level="2">
+						Популярное&nbsp;
+						<span
+							role="img"
+							aria-label="Эмодзи «Ухмыляющееся лицо с глазами звёздами»"
+						>
+							🤩
+						</span>
+					</Title>
 
-				<div className="Search-SelectionList">
-					<div className="Search-Item"></div>
-					<div className="Search-Item"></div>
-					<div className="Search-Item"></div>
+					<div className="Search-SelectionList">
+						<div className="Search-Item"></div>
+						<div className="Search-Item"></div>
+						<div className="Search-Item"></div>
+					</div>
 				</div>
-			</div>}
+			)}
+
+			<div className="Search-Results">
+				<div className="Search-Preloader"></div>
+			</div>
 		</div>
 	);
 };
