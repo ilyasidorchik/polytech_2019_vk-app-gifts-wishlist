@@ -8,6 +8,7 @@ import './Search.scss';
 
 const Search: React.FC = () => {
 	const [value, setValue] = useState<string>('');
+	const [loading, setLoading] = useState<boolean>(false);
 
 	const handleInputChange = useCallback(
 		(e: ChangeEvent<HTMLInputElement>) => {
@@ -16,6 +17,17 @@ const Search: React.FC = () => {
 		},
 		[]
 	);
+
+	const handleSubmit = useCallback((e: ChangeEvent<HTMLFormElement>) => {
+		e.preventDefault();
+
+		setLoading(true);
+
+		// axios
+		// 	.get('https://ege.sdamgia.ru/newapi/general')
+		// 	.then(response => console.log(response))
+		// 	.catch(error => alert(error));
+	}, []);
 
 	return (
 		<div className="Search">
@@ -29,7 +41,7 @@ const Search: React.FC = () => {
 				</span>
 			</Title>
 
-			<form className="Search-Form">
+			<form className="Search-Form" onSubmit={handleSubmit}>
 				<Input
 					name="search"
 					placeholder="Название товара"
@@ -39,7 +51,7 @@ const Search: React.FC = () => {
 				/>
 			</form>
 
-			{!value && (
+			{!loading && (
 				<div className="Search-Selection">
 					<Title className="Search-Title" level="2">
 						Популярное&nbsp;
@@ -59,7 +71,7 @@ const Search: React.FC = () => {
 				</div>
 			)}
 
-			{value && (
+			{loading && (
 				<div className="Search-Results">
 					<div className="Search-Preloader">
 						<ReactLoading
