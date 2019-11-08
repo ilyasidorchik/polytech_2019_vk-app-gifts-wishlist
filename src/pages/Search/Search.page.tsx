@@ -1,4 +1,5 @@
 import React, { useState, useCallback, ChangeEvent } from 'react';
+import ReactLoading from 'react-loading';
 
 import Title from '../../components/Title';
 import Input from '../../components/Input';
@@ -58,9 +59,18 @@ const Search: React.FC = () => {
 				</div>
 			)}
 
-			<div className="Search-Results">
-				<div className="Search-Preloader"></div>
-			</div>
+			{value && (
+				<div className="Search-Results">
+					<div className="Search-Preloader">
+						<ReactLoading
+							type="spokes"
+							color="#ddd"
+							height={30}
+							width={30}
+						/>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 };
