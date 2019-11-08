@@ -1,33 +1,15 @@
-import React, { useState, useCallback, ChangeEvent } from 'react';
+import React, { useState } from 'react';
 import ReactLoading from 'react-loading';
+import cx from 'classnames';
 
 import Title from '../../components/Title';
-import Input from '../../components/Input';
 
 import './Search.scss';
+import SearchForm from './components/SearchForm';
 
 const Search: React.FC = () => {
 	const [value, setValue] = useState<string>('');
 	const [loading, setLoading] = useState<boolean>(false);
-
-	const handleInputChange = useCallback(
-		(e: ChangeEvent<HTMLInputElement>) => {
-			const { value } = e.target;
-			setValue(value);
-		},
-		[]
-	);
-
-	const handleSubmit = useCallback((e: ChangeEvent<HTMLFormElement>) => {
-		e.preventDefault();
-
-		setLoading(true);
-
-		// axios
-		// 	.get('https://ege.sdamgia.ru/newapi/general')
-		// 	.then(response => console.log(response))
-		// 	.catch(error => alert(error));
-	}, []);
 
 	return (
 		<div className="Search">
@@ -41,19 +23,20 @@ const Search: React.FC = () => {
 				</span>
 			</Title>
 
-			<form className="Search-Form" onSubmit={handleSubmit}>
-				<Input
-					name="search"
-					placeholder="Название товара"
-					value={value}
-					onChange={handleInputChange}
-					autoFocus={true}
-				/>
-			</form>
+			<SearchForm
+				value={value}
+				setValue={setValue}
+				setLoading={setLoading}
+			/>
 
 			{!loading && (
 				<div className="Search-Selection">
-					<Title className="Search-Title" level="2">
+					<Title
+						className={cx('Search-Title', {
+							'Search-Title_hidden': value
+						})}
+						level="2"
+					>
 						Популярное&nbsp;
 						<span
 							role="img"

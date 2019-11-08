@@ -2,13 +2,55 @@
 	&-Title {
 		text-align: center;
 		margin-bottom: 25px;
+
+		&_hidden {
+			visibility: hidden;
+		}
 	}
 
 	&-Form {
-		margin-bottom: 50px;
+		display: flex;
+		justify-content: center;
 
-		text-align: center;
-	}	
+		margin-bottom: 50px;
+	}
+
+	&-Container {
+		position: relative;
+
+		width: 500px;
+	}
+
+	&-ExampleList {
+		position: absolute;
+		top: 30px;
+		right: 0;
+		left: 0;
+		z-index: 1;
+
+		padding: 25px 0 15px;
+		overflow: visible;
+
+		border-radius: 0 0 25px 25px;
+		box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+	}
+
+	&-Example {
+		display: block;
+		padding: 5px 0;
+		padding-left: calc(25px + 1px);
+
+		cursor: pointer;
+
+		&:hover {
+			background: #eee;
+		}
+	}
+
+	&-Input {
+		position: relative;
+		z-index: 2;
+	}
 
 	&-Results {
 		min-height: 250px;
