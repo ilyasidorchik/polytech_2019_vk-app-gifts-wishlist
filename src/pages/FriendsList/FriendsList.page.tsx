@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Title from '../../components/Title';
 import SearchForm from '../Search/components/SearchForm';
@@ -25,6 +26,16 @@ const FriendsList: React.FC = () => {
 				setValue={setValue}
 				setLoading={setLoading}
 			/>
+
+			<div className="Friend">
+				<div className="Friend-Image"></div>
+				<div className="Friend-Preview">
+					<Title className="Friend-Title" level="3">
+						Константин Константинопольский
+					</Title>
+					<Link to="/">Узнать, что подарить</Link>
+				</div>
+			</div>
 		</div>
 	);
 };

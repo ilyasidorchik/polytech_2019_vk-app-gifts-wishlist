@@ -3,6 +3,7 @@ import cx from 'classnames';
 
 import './_level/Title_level_1.scss';
 import './_level/Title_level_2.scss';
+import './_level/Title_level_3.scss';
 import './Title.scss';
 
 interface TitleProps {

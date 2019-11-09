@@ -1,0 +1,20 @@
+.Friend {
+    display: flex;
+
+	&-Image {
+        
+
+		width: 100px;
+        height: 100px;
+        margin-right: 25px;
+
+        background: url(./assets/UserThumbnail_medium.jpg) center / contain;
+        border-radius: 50%;
+    }
+    
+    &-Preview {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
