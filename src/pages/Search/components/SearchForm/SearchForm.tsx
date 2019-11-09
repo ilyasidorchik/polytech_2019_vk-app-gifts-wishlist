@@ -52,13 +52,9 @@ const SearchForm: React.FC<SearchFormProps> = ({
 		// 	.get('api/')
 		// 	.then(response => console.log(response))
 		// 	.catch(error => alert(error));
-		let newExamples = ['iPhone X', 'iPhone XS', 'iPhone 11'];
-
-		newExamples = newExamples.filter(item => item.includes(value));
-
-		newExamples = newExamples.map(item => item.replace(value, ''));
-
-		console.log(newExamples);
+		const newExamples = ['iPhone X', 'iPhone XS', 'iPhone 11']
+			.filter(item => value && item.includes(value))
+			.map(item => item.replace(value, ''));
 
 		setExamples(newExamples);
 	}, [value]);
@@ -74,7 +70,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
 					onChange={handleInputChange}
 					autoFocus={true}
 				/>
-				{value && (
+				{examples.length > 0 && (
 					<div className="Search-ExampleList">
 						{examples.map((item, i) => (
 							<div className="Search-Example" key={i}>
