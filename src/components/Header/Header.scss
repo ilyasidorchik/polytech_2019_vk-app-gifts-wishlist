@@ -63,4 +63,8 @@ $thumbnail-size: 40;
 			display: flex;
 		}
 	}
+
+	&-Link_selected {
+		display: none;
+	}
 }

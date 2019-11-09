@@ -9,9 +9,9 @@ import UserThumbnail from './assets/UserThumbnail.jpg';
 const Header: React.FC = () => (
 	<div className="Header">
 		<NavLink
-			to="/profile"
 			className="Link Header-Preview Header-Preview_user"
-			activeClassName="Link_selected"
+			activeClassName="Header-Link_selected"
+			to="/profile"
 		>
 			<img
 				className="Header-Thumbnail Header-Thumbnail_user"
@@ -22,9 +22,18 @@ const Header: React.FC = () => (
 		</NavLink>
 
 		<NavLink
-			to="/profile"
+			className="Link Header-Preview Header-Preview_user"
+			activeClassName="Header-Link_selected"
+			to="/"
+			exact
+		>
+			<p>Поиск новых подарков</p>
+		</NavLink>
+
+		<NavLink
 			className="Link Header-Preview Header-Preview_friends"
-			activeClassName="Link_selected"
+			activeClassName="Header-Link_selected"
+			to="/friends-list"
 		>
 			<div className="Header-ThumbnailStack">
 				<img
