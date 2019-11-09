@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Header from '../../components/Header';
 import Search from '../Search';
-import MyPage from '../MyPage';
+import UserPage from '../UserPage';
 import FriendPage from '../FriendPage';
 import FriendsList from '../FriendsList';
 import './App.scss';
@@ -15,7 +15,7 @@ const App: React.FC = () => {
 				<Header />
 				<Switch>
 					<Route path="/" component={Search} exact />
-					<Route path="/my-page" component={MyPage} />
+					<Route path="/profile" component={UserPage} />
 					<Route path="/friend-page" component={FriendPage} />
 					<Route path="/friends-list" component={FriendsList} />
 					<Redirect to="/" />
