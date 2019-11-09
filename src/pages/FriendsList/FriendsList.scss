@@ -1,20 +1,32 @@
+.FriendsList {
+	&-Results {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
 .Friend {
-    display: flex;
+	display: flex;
+	margin-bottom: 30px;
 
 	&-Image {
-        
-
 		width: 100px;
-        height: 100px;
-        margin-right: 25px;
+		height: 100px;
+		margin-right: 25px;
 
-        background: url(./assets/UserThumbnail_medium.jpg) center / contain;
-        border-radius: 50%;
-    }
-    
-    &-Preview {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
+		background: url(./assets/UserThumbnail_medium.jpg) center / contain;
+		border-radius: 50%;
+		box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.15);
+	}
+
+	&-Title {
+		margin-bottom: 15px;
+	}
+
+	&-Preview {
+		display: flex;
+		flex-direction: column;
+		width: 400px;
+	}
 }
