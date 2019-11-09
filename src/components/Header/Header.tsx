@@ -33,7 +33,7 @@ const Header: React.FC = () => (
 		<NavLink
 			className="Link Header-Preview Header-Preview_friends"
 			activeClassName="Header-Link_selected"
-			to="/friends-list"
+			to="/friends"
 		>
 			<div className="Header-ThumbnailStack">
 				<img

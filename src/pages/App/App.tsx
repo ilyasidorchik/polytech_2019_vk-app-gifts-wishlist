@@ -17,7 +17,7 @@ const App: React.FC = () => {
 					<Route path="/" component={Search} exact />
 					<Route path="/profile" component={UserPage} />
 					<Route path="/friend-page" component={FriendPage} />
-					<Route path="/friends-list" component={FriendsList} />
+					<Route path="/friends" component={FriendsList} />
 					<Redirect to="/" />
 				</Switch>
 			</BrowserRouter>
