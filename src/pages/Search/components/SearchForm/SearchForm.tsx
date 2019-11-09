@@ -58,6 +58,8 @@ const SearchForm: React.FC<SearchFormProps> = ({
 
 		newExamples = newExamples.map(item => item.replace(value, ''));
 
+		console.log(newExamples);
+
 		setExamples(newExamples);
 	}, [value]);
 
@@ -74,8 +76,8 @@ const SearchForm: React.FC<SearchFormProps> = ({
 				/>
 				{value && (
 					<div className="Search-ExampleList">
-						{examples.map(item => (
-							<div className="Search-Example">
+						{examples.map((item, i) => (
+							<div className="Search-Example" key={i}>
 								{value}
 								<b>{item}</b>
 							</div>
