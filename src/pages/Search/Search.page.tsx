@@ -3,9 +3,8 @@ import ReactLoading from 'react-loading';
 import cx from 'classnames';
 
 import Title from '../../components/Title';
-
-import './Search.scss';
 import SearchForm from './components/SearchForm';
+import './Search.scss';
 
 const Search: React.FC = () => {
 	const [value, setValue] = useState<string>('');
