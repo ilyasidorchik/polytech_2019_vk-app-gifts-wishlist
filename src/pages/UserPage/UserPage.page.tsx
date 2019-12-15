@@ -47,7 +47,9 @@ const UserPage: React.FC = () => {
 						</NavLink>
 					</div>
 
-					<Button>Поделиться</Button>
+					<div className="UserPage-Share">
+						<Button>Поделиться</Button>
+					</div>
 				</div>
 			</div>
 		</div>
