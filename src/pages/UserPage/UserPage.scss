@@ -1,5 +1,44 @@
 .UserPage {
+	display: flex;
+	width: 100%;
+	margin-bottom: 30px;
+
+	&-Header {
+		display: flex;
+		margin-bottom: 30px;
+	}
+
+	&-Image {
+		width: 150px;
+		height: 150px;
+		margin-right: 25px;
+
+		background: url(./assets/UserThumbnail_medium.jpg) center / contain;
+		border-radius: 50%;
+		box-shadow: 0 3px 9px 0 rgba(0, 0, 0, 0.15);
+	}
+
+	&-Preview {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
 	&-Title {
-		text-align: center;
+		margin: 0 !important;
+	}
+
+	&-Nav {
+		display: flex;
+
+		margin-bottom: 15px;
+
+		.UserPage-Link:first-child {
+			margin-right: 10px;
+		}
+	}
+
+	&-Link {
+		font-size: 15px;
 	}
 }

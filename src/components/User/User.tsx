@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import cx from 'classnames';
 
 import Title from '../../components/Title';
-import './User.scss';
 import Button from '../../components/Button';
+import './User.scss';
 
 interface UserProps {
 	className?: string;

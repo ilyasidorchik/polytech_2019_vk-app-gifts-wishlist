@@ -11,7 +11,7 @@ const FriendsList: React.FC = () => {
 
 	return (
 		<div className="FriendsList">
-			<Title className="UserPage-Title" level="1">
+			<Title className="FriendsList-Title" level="1">
 				Мои друзья&nbsp;
 				<span
 					role="img"
