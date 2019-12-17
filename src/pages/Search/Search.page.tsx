@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import ReactLoading from 'react-loading';
-import cx from 'classnames';
 
 import Title from '../../components/Title';
 import SearchForm from './components/SearchForm';
@@ -27,31 +26,6 @@ const Search: React.FC = () => {
 				setValue={setValue}
 				setLoading={setLoading}
 			/>
-
-			{!loading && (
-				<div className="Search-Selection">
-					<Title
-						className={cx('Search-Title', {
-							'Search-Title_hidden': value
-						})}
-						level="2"
-					>
-						Популярное&nbsp;
-						<span
-							role="img"
-							aria-label="Эмодзи «Ухмыляющееся лицо с глазами звёздами»"
-						>
-							🤩
-						</span>
-					</Title>
-
-					<div className="Search-SelectionList">
-						<div className="Search-Item"></div>
-						<div className="Search-Item"></div>
-						<div className="Search-Item"></div>
-					</div>
-				</div>
-			)}
 
 			{loading && (
 				<div className="Search-Results">
