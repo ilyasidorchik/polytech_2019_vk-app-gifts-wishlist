@@ -52,7 +52,13 @@ const SearchForm: React.FC<SearchFormProps> = ({
 		// 	.get('api/')
 		// 	.then(response => console.log(response))
 		// 	.catch(error => alert(error));
-		const newExamples = ['iPhone X', 'iPhone XS', 'iPhone 11']
+		const newExamples = [
+			'игрушки для мальчиков',
+			'игрушки для девочек',
+			'игрушки',
+			'илон маск',
+			'илон маск tesla spacex и дорога в будущее'
+		]
 			.filter(item => value && item.includes(value))
 			.map(item => item.replace(value, ''));
 
