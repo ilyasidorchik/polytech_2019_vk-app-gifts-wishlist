@@ -6,10 +6,13 @@ import './Button.scss';
 interface IButton {
 	className?: string;
 	children: ReactNode;
+	onClick?: any;
 }
 
-const Button: React.FC<IButton> = ({ className, children }) => (
-	<div className={cx('Button', className)}>{children}</div>
+const Button: React.FC<IButton> = ({ className, children, onClick }) => (
+	<div className={cx('Button', className)} onClick={onClick}>
+		{children}
+	</div>
 );
 
 export default Button;

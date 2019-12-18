@@ -22,6 +22,9 @@ export const fetchSearchResultsSuccess = createAction(
 export const fetchSearchResultsFailure = createAction(
 	constants.FETCH_SEARCH_RESULTS_FAILURE
 );
+export const removeSearchResults = createAction(
+	constants.REMOVE_SEARCH_RESULTS
+);
 
 const searchSuggestions = handleActions(
 	{
@@ -36,7 +39,8 @@ const searchResults = handleActions(
 	{
 		[fetchSearchResultsRequest]: () => null,
 		[fetchSearchResultsSuccess]: (_state, action) => action.payload,
-		[fetchSearchResultsFailure]: (_state, action) => action.payload
+		[fetchSearchResultsFailure]: (_state, action) => action.payload,
+		[removeSearchResults]: () => null
 	},
 	null
 );

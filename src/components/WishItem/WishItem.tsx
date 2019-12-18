@@ -9,9 +9,18 @@ export interface IWishItem {
 	title: string;
 	price: number;
 	desc: string;
+	isWanted?: boolean;
+	handleClick: () => void;
 }
 
-const WishItem: React.FC<IWishItem> = ({ url, title, price, desc }) => (
+const WishItem: React.FC<IWishItem> = ({
+	url,
+	title,
+	price,
+	desc,
+	isWanted,
+	handleClick
+}) => (
 	<div className="WishItem">
 		<div className="WishItem-Info">
 			<img className="WishItem-Cover" src={url} alt={title} />
@@ -21,7 +30,7 @@ const WishItem: React.FC<IWishItem> = ({ url, title, price, desc }) => (
 			<div className="WishItem-Price">{price}&nbsp;₽</div>
 			<div className="WishItem-Desc">{desc}</div>
 		</div>
-		<StatusBtns />
+		<StatusBtns isWanted={isWanted} handleClick={handleClick} />
 	</div>
 );
 

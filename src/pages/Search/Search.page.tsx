@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ReactLoading from 'react-loading';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import Title from '../../components/Title';
 import SearchForm from './components/SearchForm';
@@ -12,6 +13,12 @@ const Search: React.FC = () => {
 	const [value, setValue] = useState<string>('');
 	const [loading, setLoading] = useState<boolean>(false);
 	const results = useSelector(getSearchResults);
+
+	let history = useHistory();
+
+	const handleClick = useCallback(() => {
+		history.push('/profile');
+	}, []);
 
 	useEffect(() => {
 		console.log(results);
@@ -54,6 +61,7 @@ const Search: React.FC = () => {
 							title={title}
 							price={price}
 							desc={desc}
+							handleClick={handleClick}
 						/>
 					))}
 			</div>
