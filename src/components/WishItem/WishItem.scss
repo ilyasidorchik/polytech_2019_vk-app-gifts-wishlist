@@ -1,0 +1,28 @@
+.WishItem {
+	width: 200px;
+
+	&-Info {
+		margin-bottom: 15px;
+	}
+
+	&-Cover {
+		width: 100%;
+
+		margin-bottom: 15px;
+	}
+
+	&-Title {
+		margin-bottom: 5px;
+	}
+
+	&-Price {
+		font-size: 12px;
+
+		margin-bottom: 5px;
+	}
+
+	&-Desc {
+		font-size: 10px;
+		color: #b2b2b2;
+	}
+}

@@ -9,7 +9,8 @@ import React, {
 import { useSelector, useDispatch } from 'react-redux';
 import {
 	getSearchSuggestions,
-	fetchSearchSuggestionsRequest
+	fetchSearchSuggestionsRequest,
+	fetchSearchResultsRequest
 } from '../../../../modules/Search';
 
 import Input from '../../../../components/Input';
@@ -49,11 +50,11 @@ const SearchForm: React.FC<SearchFormProps> = ({
 
 			setTimeout(() => {
 				setLoading(false);
-			}, 5000);
 
-			
+				dispatch(fetchSearchResultsRequest(value));
+			}, 5);
 		},
-		[setLoading]
+		[setLoading, dispatch, value]
 	);
 
 	useEffect(() => {

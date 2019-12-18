@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+import cx from 'classnames';
 
 import './Button.scss';
 
-const Button: React.FC = ({ children }) => (
-	<div className="Button">{children}</div>
+interface IButton {
+	className?: string;
+	children: ReactNode;
+}
+
+const Button: React.FC<IButton> = ({ className, children }) => (
+	<div className={cx('Button', className)}>{children}</div>
 );
 
 export default Button;
