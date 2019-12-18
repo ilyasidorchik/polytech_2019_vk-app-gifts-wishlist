@@ -16,9 +16,9 @@ const Header: React.FC = () => (
 			<img
 				className="Header-Thumbnail Header-Thumbnail_user"
 				src={UserThumbnail}
-				alt="Константин Константинопольский"
+				alt="Илья Сидорчик"
 			/>
-			<p>Константин Константинопольский</p>
+			<p>Илья Сидорчик</p>
 		</NavLink>
 
 		<NavLink
