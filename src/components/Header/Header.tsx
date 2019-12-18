@@ -38,17 +38,17 @@ const Header: React.FC = () => (
 			<div className="Header-ThumbnailStack">
 				<img
 					className="Header-Thumbnail Header-Thumbnail_friend Header-Thumbnail_friend_1"
-					src={UserThumbnail}
+					src="https://sun1-27.userapi.com/c856024/v856024222/13faea/cJnQNlsjprI.jpg?ava=1"
 					alt="Константин Константинопольский"
 				/>
 				<img
 					className="Header-Thumbnail Header-Thumbnail_friend Header-Thumbnail_friend_2"
-					src={UserThumbnail}
+					src="https://sun1-18.userapi.com/c849020/v849020378/7b580/ZzqDSM3W0H8.jpg?ava=1"
 					alt="Константин Константинопольский"
 				/>
 				<img
 					className="Header-Thumbnail Header-Thumbnail_friend Header-Thumbnail_friend_3"
-					src={UserThumbnail}
+					src="https://sun9-32.userapi.com/c834103/v834103472/f6abb/PqyvNiyWmOE.jpg?ava=1"
 					alt="Константин Константинопольский"
 				/>
 			</div>
