@@ -6,6 +6,11 @@ import React, {
 	Dispatch,
 	SetStateAction
 } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+	getSearchSuggestions,
+	fetchSearchSuggestionsRequest
+} from '../../../../modules/Search';
 
 import Input from '../../../../components/Input';
 
@@ -22,13 +27,17 @@ const SearchForm: React.FC<SearchFormProps> = ({
 	setLoading
 }) => {
 	const [examples, setExamples] = useState<Array<string>>([]);
+	const selectedData = useSelector(getSearchSuggestions);
+	const dispatch = useDispatch();
 
 	const handleInputChange = useCallback(
 		(e: ChangeEvent<HTMLInputElement>) => {
 			const { value } = e.target;
 			setValue(value);
+
+			dispatch(fetchSearchSuggestionsRequest(value));
 		},
-		[setValue]
+		[setValue, dispatch]
 	);
 
 	const handleSubmit = useCallback(
@@ -36,34 +45,19 @@ const SearchForm: React.FC<SearchFormProps> = ({
 			e.preventDefault();
 
 			setLoading(true);
-
-			// get gift items
-			// axios
-			// 	.get('api/')
-			// 	.then(response => console.log(response))
-			// 	.catch(error => alert(error));
 		},
 		[setLoading]
 	);
 
 	useEffect(() => {
-		// get gift titles
-		// axios
-		// 	.get('api/')
-		// 	.then(response => console.log(response))
-		// 	.catch(error => alert(error));
-		const newExamples = [
-			'игрушки для мальчиков',
-			'игрушки для девочек',
-			'игрушки',
-			'илон маск',
-			'илон маск tesla spacex и дорога в будущее'
-		]
-			.filter(item => value && item.includes(value))
-			.map(item => item.replace(value, ''));
+		const newExamples =
+			selectedData &&
+			selectedData
+				.filter((item: string) => value && item.includes(value))
+				.map((item: string) => item.replace(value, ''));
 
 		setExamples(newExamples);
-	}, [value]);
+	}, [value, selectedData]);
 
 	return (
 		<form className="Search-Form" onSubmit={handleSubmit}>
@@ -76,7 +70,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
 					onChange={handleInputChange}
 					autoFocus={true}
 				/>
-				{examples.length > 0 && (
+				{examples && examples.length > 0 && (
 					<div className="Search-ExampleList">
 						{examples.map((item, i) => (
 							<div className="Search-Example" key={i}>
