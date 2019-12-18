@@ -41,10 +41,17 @@ const SearchForm: React.FC<SearchFormProps> = ({
 	);
 
 	const handleSubmit = useCallback(
-		(e: ChangeEvent<HTMLFormElement>) => {
+		(e: ChangeEvent<HTMLFormElement> | any) => {
 			e.preventDefault();
 
+			setExamples([]);
 			setLoading(true);
+
+			setTimeout(() => {
+				setLoading(false);
+			}, 5000);
+
+			
 		},
 		[setLoading]
 	);
@@ -73,7 +80,11 @@ const SearchForm: React.FC<SearchFormProps> = ({
 				{examples && examples.length > 0 && (
 					<div className="Search-ExampleList">
 						{examples.map((item, i) => (
-							<div className="Search-Example" key={i}>
+							<div
+								className="Search-Example"
+								onClick={handleSubmit}
+								key={i}
+							>
 								{value}
 								<b>{item}</b>
 							</div>
