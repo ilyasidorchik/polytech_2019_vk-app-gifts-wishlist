@@ -531,6 +531,10 @@
       },
       {
         "type": "rule",
+        "selector": "^&::\\w"
+      },
+      {
+        "type": "rule",
         "selector": "^&:\\w"
       },
       {
