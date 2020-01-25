@@ -63,12 +63,10 @@
 	},
 	"lint-staged": {
 		"src/**/*.{js,jsx,ts,tsx,json}": [
-			"prettier --write",
-			"git add"
+			"prettier --write"
 		],
 		"!(_*).scss": [
-			"stylelint --fix --config ./.stylelintrc",
-			"git add"
+			"stylelint --fix --config ./.stylelintrc"
 		]
 	}
 }
